@@ -234,6 +234,24 @@ int main(int argc, const char *argv[])
 		printf("\n");
 	}
 
+	printf("¿Quieres obtener estos datos en un fichero de texto? (Y/N)  ");
+	scanf("%c",&c);
+	scanf("%c",&c);
+	if(c=='Y' || c=='y')
+	{
+		FILE *salida;
+		salida=fopen("salida.txt","w");
+		for(i=0;i<filas;i++)
+		{
+			for(j=0;j<columnas;j++)
+			{
+				fprintf(salida,"%.3lf\t",potenciales[i][j]);
+			}
+			fprintf(salida,"\n");
+		}
+		fclose(salida);
+
+	}
 	/*
 	for(i=0;i<filas;i++)
 	{
